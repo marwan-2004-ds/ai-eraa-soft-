@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KPI Reference Guide</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm; }
+  body { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.2pt; color: #1d2733; line-height: 1.45; }
+  h1 { font-size: 24pt; margin: 0 0 4px; color: #123b6d; }
+  h2 { font-size: 15pt; color: #123b6d; border-bottom: 2px solid #123b6d; padding-bottom: 3px; margin-top: 26px; page-break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 14px 0 4px; color: #0f2a4a; page-break-after: avoid; }
+  .cover { text-align: center; padding-top: 120px; page-break-after: always; }
+  .cover p { color: #4a5868; }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 10px; page-break-inside: avoid; }
+  th, td { border: 1px solid #c9d3de; padding: 4px 7px; vertical-align: top; text-align: left; }
+  th { background: #eef3f8; width: 22%; font-weight: 600; }
+  .formula { font-family: Consolas, "Courier New", monospace; background: #f6f8fa; }
+  .toc a { color: #123b6d; text-decoration: none; }
+  .toc li { margin: 2px 0; }
+  .note { background: #fff8e6; border-left: 4px solid #e0a800; padding: 6px 10px; margin: 8px 0; page-break-inside: avoid; }
+  .domain { page-break-before: always; }
+  .summary th { width: auto; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Key Performance Indicators</h1>
+  <p style="font-size:14pt">A Standardized Reference Guide Across Nine Business Domains</p>
+  <p>Marketing · Sales · Product · Customer Success · Finance · Operations · Human Resources · Engineering · Analytics</p>
+  <p style="margin-top:60px">EraaSoft AI 805 — Lecture 27 Task</p>
+</div>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+  <li><a href="#intro">Introduction and Conventions</a></li>
+  <li><a href="#marketing">Marketing</a></li>
+  <li><a href="#sales">Sales</a></li>
+  <li><a href="#product">Product</a></li>
+  <li><a href="#cs">Customer Success</a></li>
+  <li><a href="#finance">Finance</a></li>
+  <li><a href="#ops">Operations</a></li>
+  <li><a href="#hr">Human Resources</a></li>
+  <li><a href="#eng">Engineering</a></li>
+  <li><a href="#analytics">Analytics</a></li>
+  <li><a href="#similar">Distinguishing Similar Metrics</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#refs">References</a></li>
+</ol>
+
+<h2 id="intro">1. Introduction and Conventions</h2>
+<p>A Key Performance Indicator (KPI) is a quantifiable measure that shows how effectively an organization is achieving a specific business objective. This guide collects 40 widely used KPIs across nine domains and documents each one in the same structure, so teams use one shared definition for every number they report.</p>
+<p><b>Each KPI includes:</b> name, definition, formula, purpose, unit of measurement, data requirements, a worked numerical example with interpretation, and a source.</p>
+<p><b>Conventions used throughout:</b></p>
+<ul>
+  <li><b>Reporting period</b>: unless stated otherwise, every KPI is computed over one period (month, quarter or year); numerator and denominator always cover the same period.</li>
+  <li><b>Percentages</b> are calculated as (numerator ÷ denominator) × 100.</li>
+  <li><b>Currency</b> is shown in US dollars ($) for examples; any currency can be used consistently.</li>
+  <li><b>"Average" headcount/customers</b> = (start of period + end of period) ÷ 2.</li>
+  <li>Example figures are illustrative, not industry benchmarks.</li>
+</ul>
+
+<!-- ===================== MARKETING ===================== -->
+<div class="domain" id="marketing">
+<h2>2. Marketing</h2>
+
+<h3>2.1 Customer Acquisition Cost (CAC)</h3>
+<table>
+<tr><th>Definition</th><td>Average cost to acquire one new paying customer.</td></tr>
+<tr><th>Formula</th><td class="formula">CAC = (Total Sales + Marketing Spend in period) ÷ New Customers Acquired in period</td></tr>
+<tr><th>Purpose</th><td>Shows the efficiency of acquisition spending; compared with CLV to judge whether growth is profitable.</td></tr>
+<tr><th>Unit</th><td>Currency per customer</td></tr>
+<tr><th>Data Requirements</th><td>Marketing and sales costs (ads, salaries, tools); count of new customers.</td></tr>
+<tr><th>Example</th><td>$50,000 spend ÷ 250 new customers = <b>$200 CAC</b>. Each new customer costs $200 to win.</td></tr>
+<tr><th>Source</th><td>HubSpot, "Customer Acquisition Cost"; Harvard Business School Online.</td></tr>
+</table>
+<div class="note">Variation: some companies calculate a "marketing-only CAC" excluding sales salaries. State which version is used.</div>
+
+<h3>2.2 Return on Ad Spend (ROAS)</h3>
+<table>
+<tr><th>Definition</th><td>Revenue generated for every unit of currency spent on advertising.</td></tr>
+<tr><th>Formula</th><td class="formula">ROAS = Revenue Attributed to Ads ÷ Ad Spend</td></tr>
+<tr><th>Purpose</th><td>Evaluates campaign and channel effectiveness to decide where to put budget.</td></tr>
+<tr><th>Unit</th><td>Ratio (e.g. 4:1 or 4×)</td></tr>
+<tr><th>Data Requirements</th><td>Ad spend per campaign; attributed revenue (attribution model).</td></tr>
+<tr><th>Example</th><td>$40,000 revenue ÷ $10,000 spend = <b>4.0×</b>. Each $1 of ads returned $4 in revenue.</td></tr>
+<tr><th>Source</th><td>Google Ads Help, "Target ROAS bidding".</td></tr>
+</table>
+
+<h3>2.3 Conversion Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of visitors or leads who complete a desired action (purchase, sign-up).</td></tr>
+<tr><th>Formula</th><td class="formula">Conversion Rate = (Conversions ÷ Total Visitors) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures how well a page, funnel or campaign turns traffic into results.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Sessions/visitors; conversion events (web analytics).</td></tr>
+<tr><th>Example</th><td>300 purchases ÷ 12,000 visitors × 100 = <b>2.5%</b>.</td></tr>
+<tr><th>Source</th><td>Google Analytics Help, "Conversion rate".</td></tr>
+</table>
+
+<h3>2.4 Click-Through Rate (CTR)</h3>
+<table>
+<tr><th>Definition</th><td>Share of people who click an ad, email link or search result after seeing it.</td></tr>
+<tr><th>Formula</th><td class="formula">CTR = (Clicks ÷ Impressions) × 100</td></tr>
+<tr><th>Purpose</th><td>Indicates relevance and appeal of creative, copy and targeting.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Impressions and clicks from the ad or email platform.</td></tr>
+<tr><th>Example</th><td>1,800 clicks ÷ 90,000 impressions × 100 = <b>2.0%</b>.</td></tr>
+<tr><th>Source</th><td>Google Ads Help, "Clickthrough rate (CTR): Definition".</td></tr>
+</table>
+
+<h3>2.5 Marketing Qualified Lead (MQL) to SQL Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of marketing-qualified leads that sales accepts as sales-qualified.</td></tr>
+<tr><th>Formula</th><td class="formula">MQL→SQL Rate = (SQLs from period's MQLs ÷ MQLs) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures lead quality and alignment between marketing and sales.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>CRM lead stages and timestamps.</td></tr>
+<tr><th>Example</th><td>120 SQLs ÷ 400 MQLs × 100 = <b>30%</b>.</td></tr>
+<tr><th>Source</th><td>Salesforce, "What Is a Marketing Qualified Lead?".</td></tr>
+</table>
+</div>
+
+<!-- ===================== SALES ===================== -->
+<div class="domain" id="sales">
+<h2>3. Sales</h2>
+
+<h3>3.1 Win Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of closed opportunities that were won.</td></tr>
+<tr><th>Formula</th><td class="formula">Win Rate = (Closed-Won Deals ÷ (Closed-Won + Closed-Lost Deals)) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures sales effectiveness and qualification quality.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>CRM opportunities with final status in the period.</td></tr>
+<tr><th>Example</th><td>45 won ÷ (45 + 105) × 100 = <b>30%</b>.</td></tr>
+<tr><th>Source</th><td>Salesforce, "Sales Metrics".</td></tr>
+</table>
+
+<h3>3.2 Average Deal Size</h3>
+<table>
+<tr><th>Definition</th><td>Mean revenue value of won deals.</td></tr>
+<tr><th>Formula</th><td class="formula">Average Deal Size = Total Revenue from Won Deals ÷ Number of Won Deals</td></tr>
+<tr><th>Purpose</th><td>Used for forecasting and to track up-market or down-market movement.</td></tr>
+<tr><th>Unit</th><td>Currency</td></tr>
+<tr><th>Data Requirements</th><td>Won deal values and counts.</td></tr>
+<tr><th>Example</th><td>$900,000 ÷ 45 deals = <b>$20,000</b>.</td></tr>
+<tr><th>Source</th><td>HubSpot, "Sales Metrics to Track".</td></tr>
+</table>
+
+<h3>3.3 Sales Cycle Length</h3>
+<table>
+<tr><th>Definition</th><td>Average time from opportunity creation to deal close (won).</td></tr>
+<tr><th>Formula</th><td class="formula">Sales Cycle = Σ (Close Date − Creation Date) for won deals ÷ Number of Won Deals</td></tr>
+<tr><th>Purpose</th><td>Shows pipeline velocity and helps cash-flow forecasting.</td></tr>
+<tr><th>Unit</th><td>Days</td></tr>
+<tr><th>Data Requirements</th><td>Opportunity creation and close dates.</td></tr>
+<tr><th>Example</th><td>Total 2,700 days across 45 deals = <b>60 days</b>.</td></tr>
+<tr><th>Source</th><td>Salesforce, "Sales Cycle".</td></tr>
+</table>
+
+<h3>3.4 Quota Attainment</h3>
+<table>
+<tr><th>Definition</th><td>Actual sales achieved as a share of the assigned target.</td></tr>
+<tr><th>Formula</th><td class="formula">Quota Attainment = (Actual Sales ÷ Sales Quota) × 100</td></tr>
+<tr><th>Purpose</th><td>Evaluates individual and team performance; checks whether quotas are realistic.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Quota per rep/team; booked revenue.</td></tr>
+<tr><th>Example</th><td>$270,000 ÷ $300,000 × 100 = <b>90%</b>.</td></tr>
+<tr><th>Source</th><td>Gartner, "Sales Performance Management".</td></tr>
+</table>
+</div>
+
+<!-- ===================== PRODUCT ===================== -->
+<div class="domain" id="product">
+<h2>4. Product</h2>
+
+<h3>4.1 Daily / Monthly Active Users (DAU / MAU)</h3>
+<table>
+<tr><th>Definition</th><td>Number of unique users who perform a meaningful action in a day (DAU) or 30-day window (MAU).</td></tr>
+<tr><th>Formula</th><td class="formula">MAU = COUNT(DISTINCT user_id with qualifying activity in last 30 days)</td></tr>
+<tr><th>Purpose</th><td>Core measure of product reach and engagement.</td></tr>
+<tr><th>Unit</th><td>Count of users</td></tr>
+<tr><th>Data Requirements</th><td>Event logs with user IDs and timestamps; definition of "active".</td></tr>
+<tr><th>Example</th><td>48,000 distinct users active in October = <b>MAU 48,000</b>.</td></tr>
+<tr><th>Source</th><td>Amplitude, "Active Users"; Mixpanel docs.</td></tr>
+</table>
+
+<h3>4.2 Stickiness (DAU/MAU Ratio)</h3>
+<table>
+<tr><th>Definition</th><td>Share of monthly users who use the product on a typical day.</td></tr>
+<tr><th>Formula</th><td class="formula">Stickiness = (Average DAU ÷ MAU) × 100</td></tr>
+<tr><th>Purpose</th><td>Shows habit formation and how often users return.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>DAU averaged over the month; MAU.</td></tr>
+<tr><th>Example</th><td>12,000 ÷ 48,000 × 100 = <b>25%</b> — the average user is active about 7.5 days per month.</td></tr>
+<tr><th>Source</th><td>Mixpanel, "DAU/MAU ratio".</td></tr>
+</table>
+
+<h3>4.3 Feature Adoption Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of active users who used a specific feature.</td></tr>
+<tr><th>Formula</th><td class="formula">Feature Adoption = (Users Who Used Feature ÷ Total Active Users) × 100</td></tr>
+<tr><th>Purpose</th><td>Validates whether new features deliver value and guides the roadmap.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Feature usage events; active user count.</td></tr>
+<tr><th>Example</th><td>9,600 ÷ 48,000 × 100 = <b>20%</b>.</td></tr>
+<tr><th>Source</th><td>Pendo, "Feature Adoption".</td></tr>
+</table>
+
+<h3>4.4 User Retention Rate (Day-N)</h3>
+<table>
+<tr><th>Definition</th><td>Share of a sign-up cohort still active N days later.</td></tr>
+<tr><th>Formula</th><td class="formula">Day-N Retention = (Cohort Users Active on Day N ÷ Cohort Size) × 100</td></tr>
+<tr><th>Purpose</th><td>Shows whether the product delivers lasting value (product-market fit).</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Sign-up dates; activity events per user.</td></tr>
+<tr><th>Example</th><td>Of 2,000 users who joined on 1 Oct, 700 were active on day 30: <b>35%</b>.</td></tr>
+<tr><th>Source</th><td>Amplitude, "Retention Analysis".</td></tr>
+</table>
+</div>
+
+<!-- ===================== CUSTOMER SUCCESS ===================== -->
+<div class="domain" id="cs">
+<h2>5. Customer Success</h2>
+
+<h3>5.1 Customer Churn Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of customers lost during a period.</td></tr>
+<tr><th>Formula</th><td class="formula">Churn Rate = (Customers Lost in Period ÷ Customers at Start of Period) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures retention problems; high churn erodes growth.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Customer count at period start; cancellations (excluding new customers who joined and left in-period, or stated otherwise).</td></tr>
+<tr><th>Example</th><td>60 lost ÷ 2,000 at start × 100 = <b>3% monthly churn</b>.</td></tr>
+<tr><th>Source</th><td>HubSpot, "Customer Churn Rate".</td></tr>
+</table>
+
+<h3>5.2 Net Revenue Retention (NRR)</h3>
+<table>
+<tr><th>Definition</th><td>Revenue kept from existing customers including expansion, minus contraction and churn.</td></tr>
+<tr><th>Formula</th><td class="formula">NRR = ((Starting MRR + Expansion − Contraction − Churned MRR) ÷ Starting MRR) × 100</td></tr>
+<tr><th>Purpose</th><td>Shows whether the existing base grows on its own; &gt;100% means growth without new customers.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>MRR per customer at start and end; upgrade/downgrade/cancel events.</td></tr>
+<tr><th>Example</th><td>(100,000 + 15,000 − 4,000 − 6,000) ÷ 100,000 × 100 = <b>105%</b>.</td></tr>
+<tr><th>Source</th><td>Stripe, "Net revenue retention"; ChartMogul.</td></tr>
+</table>
+
+<h3>5.3 Net Promoter Score (NPS)</h3>
+<table>
+<tr><th>Definition</th><td>Customer loyalty measured by "How likely are you to recommend us?" (0–10). Promoters = 9–10, Detractors = 0–6.</td></tr>
+<tr><th>Formula</th><td class="formula">NPS = % Promoters − % Detractors</td></tr>
+<tr><th>Purpose</th><td>Tracks loyalty and word-of-mouth potential.</td></tr>
+<tr><th>Unit</th><td>Score from −100 to +100</td></tr>
+<tr><th>Data Requirements</th><td>Survey responses.</td></tr>
+<tr><th>Example</th><td>500 responses: 250 promoters (50%), 100 detractors (20%): NPS = 50 − 20 = <b>+30</b>.</td></tr>
+<tr><th>Source</th><td>Bain &amp; Company, "Net Promoter System".</td></tr>
+</table>
+
+<h3>5.4 Customer Satisfaction Score (CSAT)</h3>
+<table>
+<tr><th>Definition</th><td>Share of respondents satisfied with an interaction (4 or 5 on a 5-point scale).</td></tr>
+<tr><th>Formula</th><td class="formula">CSAT = (Satisfied Responses ÷ Total Responses) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures satisfaction with a specific touchpoint (support ticket, onboarding).</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Post-interaction survey responses.</td></tr>
+<tr><th>Example</th><td>340 ÷ 400 × 100 = <b>85%</b>.</td></tr>
+<tr><th>Source</th><td>Zendesk, "Customer Satisfaction Score".</td></tr>
+</table>
+
+<h3>5.5 Customer Lifetime Value (CLV)</h3>
+<table>
+<tr><th>Definition</th><td>Expected gross profit from a customer over the whole relationship.</td></tr>
+<tr><th>Formula</th><td class="formula">CLV = (ARPA × Gross Margin %) ÷ Churn Rate  (per-period values)</td></tr>
+<tr><th>Purpose</th><td>Sets how much can be spent to acquire and retain customers (CLV:CAC ≈ 3:1 is a common target).</td></tr>
+<tr><th>Unit</th><td>Currency</td></tr>
+<tr><th>Data Requirements</th><td>Average revenue per account, gross margin, churn rate.</td></tr>
+<tr><th>Example</th><td>($100 × 0.80) ÷ 0.03 = <b>$2,667</b>; with CAC $200, CLV:CAC ≈ 13:1.</td></tr>
+<tr><th>Source</th><td>Harvard Business School Online, "Customer Lifetime Value".</td></tr>
+</table>
+<div class="note">Variation: retail often uses CLV = Average Order Value × Purchase Frequency × Customer Lifespan (revenue-based, not margin-based).</div>
+</div>
+
+<!-- ===================== FINANCE ===================== -->
+<div class="domain" id="finance">
+<h2>6. Finance</h2>
+
+<h3>6.1 Revenue Growth Rate</h3>
+<table>
+<tr><th>Definition</th><td>Percentage change in revenue between two periods.</td></tr>
+<tr><th>Formula</th><td class="formula">Revenue Growth = ((Current Period Revenue − Prior Period Revenue) ÷ Prior Period Revenue) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures the speed of business expansion.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Revenue for two comparable periods (e.g. YoY).</td></tr>
+<tr><th>Example</th><td>(1,200,000 − 1,000,000) ÷ 1,000,000 × 100 = <b>20% YoY</b>.</td></tr>
+<tr><th>Source</th><td>Corporate Finance Institute (CFI), "Revenue Growth".</td></tr>
+</table>
+
+<h3>6.2 Gross Profit Margin</h3>
+<table>
+<tr><th>Definition</th><td>Share of revenue left after cost of goods sold.</td></tr>
+<tr><th>Formula</th><td class="formula">Gross Margin = ((Revenue − COGS) ÷ Revenue) × 100</td></tr>
+<tr><th>Purpose</th><td>Shows production/pricing efficiency.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Revenue; COGS from the income statement.</td></tr>
+<tr><th>Example</th><td>(1,200,000 − 480,000) ÷ 1,200,000 × 100 = <b>60%</b>.</td></tr>
+<tr><th>Source</th><td>Investopedia, "Gross Profit Margin"; CFI.</td></tr>
+</table>
+
+<h3>6.3 Net Profit Margin</h3>
+<table>
+<tr><th>Definition</th><td>Share of revenue that remains as profit after all expenses, interest and taxes.</td></tr>
+<tr><th>Formula</th><td class="formula">Net Margin = (Net Income ÷ Revenue) × 100</td></tr>
+<tr><th>Purpose</th><td>Overall profitability measure.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Net income and revenue.</td></tr>
+<tr><th>Example</th><td>144,000 ÷ 1,200,000 × 100 = <b>12%</b>.</td></tr>
+<tr><th>Source</th><td>Investopedia, "Net Profit Margin".</td></tr>
+</table>
+
+<h3>6.4 Operating Cash Flow (OCF)</h3>
+<table>
+<tr><th>Definition</th><td>Cash generated by normal business operations.</td></tr>
+<tr><th>Formula</th><td class="formula">OCF = Net Income + Non-Cash Expenses (Depreciation, Amortization) ± Change in Working Capital</td></tr>
+<tr><th>Purpose</th><td>Shows whether the business funds itself; profit is not the same as cash.</td></tr>
+<tr><th>Unit</th><td>Currency</td></tr>
+<tr><th>Data Requirements</th><td>Income statement and balance-sheet changes (cash-flow statement, indirect method).</td></tr>
+<tr><th>Example</th><td>144,000 + 30,000 − 24,000 (receivables rose) = <b>$150,000</b>.</td></tr>
+<tr><th>Source</th><td>IFRS Foundation, IAS 7 "Statement of Cash Flows".</td></tr>
+</table>
+
+<h3>6.5 Return on Investment (ROI)</h3>
+<table>
+<tr><th>Definition</th><td>Net gain from an investment relative to its cost.</td></tr>
+<tr><th>Formula</th><td class="formula">ROI = ((Gain from Investment − Cost of Investment) ÷ Cost of Investment) × 100</td></tr>
+<tr><th>Purpose</th><td>Compares the profitability of projects or investments.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Total cost and total return attributable to the investment.</td></tr>
+<tr><th>Example</th><td>(65,000 − 50,000) ÷ 50,000 × 100 = <b>30%</b>.</td></tr>
+<tr><th>Source</th><td>Investopedia, "Return on Investment (ROI)".</td></tr>
+</table>
+</div>
+
+<!-- ===================== OPERATIONS ===================== -->
+<div class="domain" id="ops">
+<h2>7. Operations</h2>
+
+<h3>7.1 On-Time Delivery Rate (OTD)</h3>
+<table>
+<tr><th>Definition</th><td>Share of orders delivered on or before the promised date.</td></tr>
+<tr><th>Formula</th><td class="formula">OTD = (Orders Delivered On Time ÷ Total Orders Delivered) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures supply-chain reliability and customer experience.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Promised and actual delivery dates.</td></tr>
+<tr><th>Example</th><td>1,880 ÷ 2,000 × 100 = <b>94%</b>.</td></tr>
+<tr><th>Source</th><td>APQC, "Open Standards Benchmarking: Logistics".</td></tr>
+</table>
+
+<h3>7.2 Inventory Turnover</h3>
+<table>
+<tr><th>Definition</th><td>How many times inventory is sold and replaced in a period.</td></tr>
+<tr><th>Formula</th><td class="formula">Inventory Turnover = COGS ÷ Average Inventory Value</td></tr>
+<tr><th>Purpose</th><td>Low turnover signals overstock; very high turnover can signal stock-outs.</td></tr>
+<tr><th>Unit</th><td>Times per period</td></tr>
+<tr><th>Data Requirements</th><td>COGS; inventory value at start and end of the period.</td></tr>
+<tr><th>Example</th><td>480,000 ÷ ((70,000 + 90,000) ÷ 2) = <b>6× per year</b> (≈ 61 days of inventory).</td></tr>
+<tr><th>Source</th><td>CFI, "Inventory Turnover Ratio".</td></tr>
+</table>
+
+<h3>7.3 Overall Equipment Effectiveness (OEE)</h3>
+<table>
+<tr><th>Definition</th><td>Share of planned production time that is truly productive.</td></tr>
+<tr><th>Formula</th><td class="formula">OEE = Availability × Performance × Quality</td></tr>
+<tr><th>Purpose</th><td>Identifies losses from downtime, slow running and defects in manufacturing.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Run time, planned time, ideal cycle time, total and good units.</td></tr>
+<tr><th>Example</th><td>0.90 × 0.95 × 0.98 = <b>83.8%</b>.</td></tr>
+<tr><th>Source</th><td>OEE.com (Vorne Industries), "OEE Calculation".</td></tr>
+</table>
+
+<h3>7.4 Order Cycle Time</h3>
+<table>
+<tr><th>Definition</th><td>Average time from receiving an order to delivering it.</td></tr>
+<tr><th>Formula</th><td class="formula">Order Cycle Time = Σ (Delivery Date − Order Date) ÷ Number of Orders</td></tr>
+<tr><th>Purpose</th><td>Measures operational speed and responsiveness.</td></tr>
+<tr><th>Unit</th><td>Days (or hours)</td></tr>
+<tr><th>Data Requirements</th><td>Order and delivery timestamps.</td></tr>
+<tr><th>Example</th><td>7,000 total days ÷ 2,000 orders = <b>3.5 days</b>.</td></tr>
+<tr><th>Source</th><td>APQC, Supply Chain Process Classification Framework.</td></tr>
+</table>
+</div>
+
+<!-- ===================== HR ===================== -->
+<div class="domain" id="hr">
+<h2>8. Human Resources (HR)</h2>
+
+<h3>8.1 Employee Turnover Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of employees who left during a period.</td></tr>
+<tr><th>Formula</th><td class="formula">Turnover = (Separations in Period ÷ Average Headcount) × 100</td></tr>
+<tr><th>Purpose</th><td>Shows retention health; turnover is costly (hiring, training, lost productivity).</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Separations; headcount at start and end.</td></tr>
+<tr><th>Example</th><td>24 ÷ ((190 + 210) ÷ 2) × 100 = <b>12% annual</b>.</td></tr>
+<tr><th>Source</th><td>SHRM, "Calculating Turnover"; U.S. BLS JOLTS methodology.</td></tr>
+</table>
+
+<h3>8.2 Time to Hire</h3>
+<table>
+<tr><th>Definition</th><td>Average days between a candidate entering the pipeline and accepting an offer.</td></tr>
+<tr><th>Formula</th><td class="formula">Time to Hire = Σ (Offer Acceptance Date − Application Date) ÷ Number of Hires</td></tr>
+<tr><th>Purpose</th><td>Measures recruiting efficiency and candidate experience.</td></tr>
+<tr><th>Unit</th><td>Days</td></tr>
+<tr><th>Data Requirements</th><td>Applicant tracking system (ATS) dates.</td></tr>
+<tr><th>Example</th><td>840 days ÷ 30 hires = <b>28 days</b>.</td></tr>
+<tr><th>Source</th><td>SHRM, "Time to Fill vs Time to Hire".</td></tr>
+</table>
+<div class="note">Do not confuse with <b>Time to Fill</b>, which starts when the requisition is opened, not when the candidate applies.</div>
+
+<h3>8.3 Cost per Hire</h3>
+<table>
+<tr><th>Definition</th><td>Average cost of recruiting one new employee.</td></tr>
+<tr><th>Formula</th><td class="formula">Cost per Hire = (External Recruiting Costs + Internal Recruiting Costs) ÷ Total Hires</td></tr>
+<tr><th>Purpose</th><td>Budgets recruitment and compares sourcing channels.</td></tr>
+<tr><th>Unit</th><td>Currency per hire</td></tr>
+<tr><th>Data Requirements</th><td>Agency fees, ads, recruiter time, tools; hire count.</td></tr>
+<tr><th>Example</th><td>$120,000 ÷ 30 = <b>$4,000</b>.</td></tr>
+<tr><th>Source</th><td>ANSI/SHRM 06001.2012 "Cost-Per-Hire" standard.</td></tr>
+</table>
+
+<h3>8.4 Absenteeism Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of scheduled work time lost to unplanned absence.</td></tr>
+<tr><th>Formula</th><td class="formula">Absenteeism = (Unplanned Absence Days ÷ Total Scheduled Workdays) × 100</td></tr>
+<tr><th>Purpose</th><td>Indicates engagement, wellbeing and productivity issues.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Attendance records; scheduled days.</td></tr>
+<tr><th>Example</th><td>150 ÷ (200 employees × 22 days) × 100 = <b>3.4%</b>.</td></tr>
+<tr><th>Source</th><td>U.S. Bureau of Labor Statistics, "Absences from Work".</td></tr>
+</table>
+</div>
+
+<!-- ===================== ENGINEERING ===================== -->
+<div class="domain" id="eng">
+<h2>9. Engineering</h2>
+<p>The first four KPIs below are the DORA metrics, the most widely used standard for software delivery performance.</p>
+
+<h3>9.1 Deployment Frequency</h3>
+<table>
+<tr><th>Definition</th><td>How often code is successfully deployed to production.</td></tr>
+<tr><th>Formula</th><td class="formula">Deployment Frequency = Number of Production Deployments ÷ Number of Days (or Weeks) in Period</td></tr>
+<tr><th>Purpose</th><td>Measures delivery throughput and batch size.</td></tr>
+<tr><th>Unit</th><td>Deployments per day/week</td></tr>
+<tr><th>Data Requirements</th><td>CI/CD deployment logs.</td></tr>
+<tr><th>Example</th><td>60 deployments ÷ 30 days = <b>2 per day</b> (DORA "elite").</td></tr>
+<tr><th>Source</th><td>Google Cloud DORA, "Accelerate State of DevOps Report".</td></tr>
+</table>
+
+<h3>9.2 Lead Time for Changes</h3>
+<table>
+<tr><th>Definition</th><td>Time from code commit to that code running in production.</td></tr>
+<tr><th>Formula</th><td class="formula">Lead Time = Median (Deploy Time − Commit Time) across changes</td></tr>
+<tr><th>Purpose</th><td>Measures delivery speed.</td></tr>
+<tr><th>Unit</th><td>Hours or days</td></tr>
+<tr><th>Data Requirements</th><td>Commit timestamps linked to deployments.</td></tr>
+<tr><th>Example</th><td>Median of change lead times = <b>18 hours</b>.</td></tr>
+<tr><th>Source</th><td>Google Cloud DORA research.</td></tr>
+</table>
+
+<h3>9.3 Change Failure Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of deployments that cause a production failure requiring remediation.</td></tr>
+<tr><th>Formula</th><td class="formula">Change Failure Rate = (Failed Deployments ÷ Total Deployments) × 100</td></tr>
+<tr><th>Purpose</th><td>Measures delivery quality/stability.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Deployments linked to incidents, rollbacks or hotfixes.</td></tr>
+<tr><th>Example</th><td>6 ÷ 60 × 100 = <b>10%</b>.</td></tr>
+<tr><th>Source</th><td>Google Cloud DORA research.</td></tr>
+</table>
+
+<h3>9.4 Mean Time to Recovery (MTTR)</h3>
+<table>
+<tr><th>Definition</th><td>Average time to restore service after a production failure.</td></tr>
+<tr><th>Formula</th><td class="formula">MTTR = Σ (Restore Time − Incident Start Time) ÷ Number of Incidents</td></tr>
+<tr><th>Purpose</th><td>Measures resilience and incident-response effectiveness.</td></tr>
+<tr><th>Unit</th><td>Minutes or hours</td></tr>
+<tr><th>Data Requirements</th><td>Incident management timestamps.</td></tr>
+<tr><th>Example</th><td>300 minutes ÷ 6 incidents = <b>50 minutes</b>.</td></tr>
+<tr><th>Source</th><td>Google SRE Book; DORA research.</td></tr>
+</table>
+
+<h3>9.5 Defect Density</h3>
+<table>
+<tr><th>Definition</th><td>Number of confirmed defects relative to code size.</td></tr>
+<tr><th>Formula</th><td class="formula">Defect Density = Confirmed Defects ÷ (Lines of Code ÷ 1,000)</td></tr>
+<tr><th>Purpose</th><td>Compares code quality across modules or releases.</td></tr>
+<tr><th>Unit</th><td>Defects per KLOC</td></tr>
+<tr><th>Data Requirements</th><td>Bug tracker; code size per module.</td></tr>
+<tr><th>Example</th><td>45 ÷ (90,000 ÷ 1,000) = <b>0.5 defects/KLOC</b>.</td></tr>
+<tr><th>Source</th><td>IEEE Std 1061 (Software Quality Metrics Methodology).</td></tr>
+</table>
+</div>
+
+<!-- ===================== ANALYTICS ===================== -->
+<div class="domain" id="analytics">
+<h2>10. Analytics</h2>
+
+<h3>10.1 Data Quality Score (Completeness)</h3>
+<table>
+<tr><th>Definition</th><td>Share of required data fields that are populated with valid values.</td></tr>
+<tr><th>Formula</th><td class="formula">Completeness = (Valid Non-Null Required Values ÷ Total Required Values) × 100</td></tr>
+<tr><th>Purpose</th><td>Trustworthy analysis needs complete data; tracks pipeline health.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Dataset with list of required fields and validation rules.</td></tr>
+<tr><th>Example</th><td>98,500 ÷ 100,000 × 100 = <b>98.5%</b>.</td></tr>
+<tr><th>Source</th><td>DAMA International, DAMA-DMBOK (Data Quality dimensions).</td></tr>
+</table>
+
+<h3>10.2 Report / Dashboard Adoption Rate</h3>
+<table>
+<tr><th>Definition</th><td>Share of intended users who actively use analytics assets.</td></tr>
+<tr><th>Formula</th><td class="formula">Adoption = (Users Who Viewed Dashboards in Period ÷ Licensed or Target Users) × 100</td></tr>
+<tr><th>Purpose</th><td>Shows whether analytics work actually supports decisions.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>BI tool usage logs; target user list.</td></tr>
+<tr><th>Example</th><td>162 ÷ 240 × 100 = <b>67.5%</b>.</td></tr>
+<tr><th>Source</th><td>Gartner, "Data and Analytics Adoption" research; Microsoft Power BI usage metrics docs.</td></tr>
+</table>
+
+<h3>10.3 Forecast Accuracy (MAPE)</h3>
+<table>
+<tr><th>Definition</th><td>Average percentage error between forecasts and actual values.</td></tr>
+<tr><th>Formula</th><td class="formula">MAPE = (1/n) × Σ |Actual − Forecast| ÷ |Actual| × 100;  Forecast Accuracy = 100 − MAPE</td></tr>
+<tr><th>Purpose</th><td>Evaluates forecasting/model quality for planning.</td></tr>
+<tr><th>Unit</th><td>Percentage</td></tr>
+<tr><th>Data Requirements</th><td>Paired forecast and actual values.</td></tr>
+<tr><th>Example</th><td>Actuals 100, 200; forecasts 90, 220: errors 10%, 10% → MAPE = <b>10%</b>, accuracy 90%.</td></tr>
+<tr><th>Source</th><td>Hyndman &amp; Athanasopoulos, <i>Forecasting: Principles and Practice</i>, 3rd ed.</td></tr>
+</table>
+
+<h3>10.4 Data Pipeline Freshness (Data Latency)</h3>
+<table>
+<tr><th>Definition</th><td>Time between an event happening and its data being available for analysis.</td></tr>
+<tr><th>Formula</th><td class="formula">Latency = Time Data Is Available in Warehouse − Event Timestamp  (report median and 95th percentile)</td></tr>
+<tr><th>Purpose</th><td>Ensures decisions use timely data; monitors SLAs.</td></tr>
+<tr><th>Unit</th><td>Minutes or hours</td></tr>
+<tr><th>Data Requirements</th><td>Event timestamps and load timestamps.</td></tr>
+<tr><th>Example</th><td>Median latency <b>45 minutes</b>, p95 = 2 hours against a 3-hour SLA: within target.</td></tr>
+<tr><th>Source</th><td>Google Cloud, "Data freshness" (Dataplex data quality docs).</td></tr>
+</table>
+</div>
+
+<!-- ===================== SIMILAR METRICS ===================== -->
+<div class="domain" id="similar">
+<h2>11. Distinguishing Similar Metrics</h2>
+<table class="summary">
+<tr><th>Metric A</th><th>Metric B</th><th>Key Difference</th></tr>
+<tr><td>Revenue Growth</td><td>Profit Margin</td><td>Growth compares revenue across periods (speed). Margin compares profit to revenue within one period (efficiency). A company can grow fast with negative margin.</td></tr>
+<tr><td>Gross Margin</td><td>Net Margin</td><td>Gross subtracts only COGS; net subtracts all expenses, interest and taxes.</td></tr>
+<tr><td>Customer Churn</td><td>Revenue Churn / NRR</td><td>Customer churn counts logos lost; NRR measures revenue and includes expansion. Losing many small customers can still give NRR &gt; 100%.</td></tr>
+<tr><td>NPS</td><td>CSAT</td><td>NPS measures overall loyalty (recommendation); CSAT measures satisfaction with a single interaction.</td></tr>
+<tr><td>ROI</td><td>ROAS</td><td>ROI uses net gain (profit) over total cost; ROAS uses gross revenue over ad spend only.</td></tr>
+<tr><td>Time to Hire</td><td>Time to Fill</td><td>Time to hire starts at candidate application; time to fill starts at requisition approval.</td></tr>
+<tr><td>Lead Time for Changes</td><td>Cycle Time</td><td>Lead time is commit → production; cycle time often starts when work begins on a ticket.</td></tr>
+<tr><td>Conversion Rate</td><td>CTR</td><td>CTR is clicks per impression (top of funnel); conversion rate is completed actions per visitor (bottom of funnel).</td></tr>
+</table>
+
+<h3>Industry differences in calculation</h3>
+<ul>
+  <li><b>Churn</b>: SaaS often uses monthly churn on MRR; telecoms use monthly subscriber churn; retail, without contracts, uses "inactive for N days".</li>
+  <li><b>CLV</b>: subscription businesses use margin ÷ churn; retail uses order value × frequency × lifespan.</li>
+  <li><b>Inventory turnover</b>: some retailers use sales instead of COGS in the numerator, which inflates the ratio.</li>
+  <li><b>Active users</b>: the definition of "active" (login vs a core action) must be stated, as it changes results greatly.</li>
+</ul>
+</div>
+
+<h2 id="conclusion">12. Conclusion</h2>
+<p>KPIs turn strategy into measurable targets. Used well, they let an organization:</p>
+<ul>
+  <li><b>Align teams</b> on shared, unambiguous definitions, so marketing, sales and finance report the same numbers.</li>
+  <li><b>Spot problems early</b>: rising churn, falling conversion or slower lead times signal issues before they hit revenue.</li>
+  <li><b>Allocate resources</b>: CLV:CAC, ROAS and ROI show where each extra dollar earns the most.</li>
+  <li><b>Balance speed and quality</b>, by pairing metrics (deployment frequency with change failure rate; growth with margin).</li>
+</ul>
+<p>Good practice is to pick a small set of KPIs per objective, define numerator, denominator and period clearly, review them regularly, and remember that KPIs show correlation, not causation: a change in a KPI is a prompt to investigate, not proof of its cause.</p>
+
+<h2 id="refs">13. References</h2>
+<ol>
+  <li>Bain &amp; Company. <i>The Net Promoter System</i>. netpromotersystem.com</li>
+  <li>Corporate Finance Institute (CFI). Financial ratios and KPI guides. corporatefinanceinstitute.com</li>
+  <li>DAMA International. <i>DAMA-DMBOK: Data Management Body of Knowledge</i>, 2nd ed., 2017.</li>
+  <li>Google Cloud / DORA. <i>Accelerate State of DevOps Report</i>. dora.dev</li>
+  <li>Beyer, B. et al. <i>Site Reliability Engineering</i>. O'Reilly / Google, 2016.</li>
+  <li>Google Ads Help Center. "Clickthrough rate", "Target ROAS". support.google.com/google-ads</li>
+  <li>Google Analytics Help Center. "Conversion rate". support.google.com/analytics</li>
+  <li>Harvard Business School Online. "Customer Lifetime Value" and "CAC". online.hbs.edu</li>
+  <li>HubSpot. Marketing, sales and churn metrics guides. blog.hubspot.com</li>
+  <li>Hyndman, R. J. &amp; Athanasopoulos, G. <i>Forecasting: Principles and Practice</i>, 3rd ed. otexts.com/fpp3</li>
+  <li>IFRS Foundation. <i>IAS 7 Statement of Cash Flows</i>. ifrs.org</li>
+  <li>IEEE. <i>Std 1061-1998, Standard for a Software Quality Metrics Methodology</i>.</li>
+  <li>Investopedia. "Gross Profit Margin", "Net Profit Margin", "ROI". investopedia.com</li>
+  <li>Mixpanel and Amplitude product analytics documentation. docs.mixpanel.com; amplitude.com/docs</li>
+  <li>SHRM. "Calculating Turnover", "Time to Fill"; ANSI/SHRM 06001.2012 Cost-Per-Hire Standard. shrm.org</li>
+  <li>Stripe and ChartMogul. SaaS metrics guides (NRR, MRR). stripe.com/resources; chartmogul.com</li>
+  <li>U.S. Bureau of Labor Statistics. JOLTS and absence statistics. bls.gov</li>
+  <li>Vorne Industries. "OEE Calculation". oee.com</li>
+  <li>Zendesk. "Customer Satisfaction Score (CSAT)". zendesk.com/blog</li>
+  <li>APQC. Process Classification Framework and benchmarking. apqc.org</li>
+</ol>
+
+</body>
+</html>
